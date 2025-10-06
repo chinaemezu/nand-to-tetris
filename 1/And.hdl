@@ -9,7 +9,11 @@
 CHIP And {
     IN a, b;
     OUT out;
+PARTS:
+//logic for implementing an And gate with only Nand gates is: (x Nand y)Nand(x Nand y)
+//the input of the nand gate is a, b. an it outputs a single output c2
+Nand (a=a, b=b, out=c2);
+//c2 is feed to both the inputs of the new nand gate a, b and outputs the finanl result
+Nand (a=c2, b=c2, out=out);
     
-    PARTS:
-    //// Replace this comment with your code.
 }
